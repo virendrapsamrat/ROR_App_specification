@@ -1,0 +1,45 @@
+<h1> New company </h1>
+
+<%= form_with scope: :company, url: companies_path, local: true do |form| %>
+ <p>
+    <%= form.label :Name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+  <%= form.label :Country_id %><br>
+  <%= form.select :country_id, Country.all.collect { |p| [ p.country_name, p.id ] }, include_blank: true %>
+ </p>
+
+  <p>
+  <%= form.label :State_id %><br>
+  <%= form.select :state_id, State.all.collect { |p| [ p.state_city, p.id ] }, include_blank: true %>
+ </p>
+
+  <p>
+  <%= form.label :City_id %><br>
+<%= form.select :city_id, City.all.collect { |p| [ p.city_name, p.id ] }, include_blank: true %>
+ </p>
+
+  <p>
+    <%= form.label :Postcode %><br>
+    <%= form.text_field :postcode %>
+  </p>
+
+  <p>
+    <%= form.label :Start_date %><br>
+    <%= form.datetime_select :start_date %>
+  </p>
+
+  <p>
+   <%= form.label :Active %><br>
+   <%= form.check_box :active %>
+  </p>
+
+   <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', welcome_index_path %>

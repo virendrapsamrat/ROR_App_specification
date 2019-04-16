@@ -1,0 +1,16 @@
+<%= form_for @image do |form| %>
+<p>
+   <%= form.label "User Id" %> <br>
+   <%= form.select :user_id, User.all.collect { |user| [ user.email, user.id ] }, include_blank: true %>
+<br>
+   <%=form.label "Real Name" %><br>
+   <%= form.text_field :real_name %>
+<br>
+   <%= form.label "Image_Name" %> <br>
+   <%= form.file_field :image_name %>
+</p>
+
+		<%= form.submit %>
+
+		<%end%>
+		<%= link_to 'Back', welcome_index_path %>

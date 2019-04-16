@@ -1,0 +1,40 @@
+<h1> Welcome to SignUp Page </h1>
+<br>
+<%= form_for @signup do |form| %>
+
+<% if @signup.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@signup.errors.count, "error") %> prohibited
+        this signup from being saved:
+      </h2>
+      <ul>
+        <% @signup.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<p>
+<%= form.label "username"  %>
+<br>
+<%= form.text_field :username %>
+</p>
+<p>
+<%= form.label "Password"  %>
+<br>
+<%= form.password_field :password %>
+</p>
+<p>
+    <%= form.submit 'Sign in'%>
+  </p>
+
+<%#= link_to 'submit', "#", :onclick => "$('#form_id').submit()" %>
+<%#= link_to '<button type="button">Sign in</button>'.html_safe, welcome_index_path %>
+
+<%#= form.submit %>
+
+<%= link_to 'Sign up', new_user_path %>
+<%#= form.submit 'welcome_index'%>
+<% end %>

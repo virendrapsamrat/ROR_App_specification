@@ -1,0 +1,28 @@
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+ 
+<p>
+  <strong>Country_Id:</strong>
+  <%= @company.country.country_name %>
+</p>
+<p>
+  <strong>State_Id:</strong>
+  <%= @company.state.state_city %>
+</p>
+ 
+<p>
+  <strong>City_Id:</strong>
+  <%= @company.city.city_name %>
+</p>
+<p>
+  <strong>Postcode:</strong>
+  <%= @company.postcode %>
+</p>
+ 
+<p>
+  <strong>Start_date:</strong>
+  <%= @company.start_date %>
+</p>
+<%= link_to 'Back', companies_path %>

@@ -1,0 +1,9 @@
+<%= form_for @region do |form| %>
+<p>
+<%= form.label "region_name"  %>
+<%= form.text_field :region_name %>
+</p>
+
+<%= form.submit %>
+<% end %>
+<%= link_to 'Back', welcome_index_path %>

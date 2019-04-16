@@ -1,0 +1,16 @@
+
+<%= form_for @country  do |form| %>
+
+	<p>
+		<%= form.label :country_name %><br>
+		<%= form.text_field :country_name %>
+	</p>
+
+
+
+<%= form.submit %>
+
+
+<% end %>
+
+<%= link_to 'Back', welcome_index_path %>

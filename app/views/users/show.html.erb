@@ -1,0 +1,42 @@
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+ 
+<p>
+  <strong>First_Name:</strong>
+  <%= @user.first_name %>
+</p>
+<p>
+  <strong>Last_Name:</strong>
+  <%= @user.last_name %>
+</p>
+ 
+<p>
+  <strong>Country_Id:</strong>
+  <%= @user.country.country_name %>
+</p>
+
+<p>
+  <strong>Role_Id:</strong>
+  <%= @user.role_id.role_name %>
+</p>
+<p>
+  <strong>Start_date:</strong>
+  <%= @user.start_date %>
+</p>
+<p>
+  <strong>End_date:</strong>
+  <%= @user.end_date %>
+</p>
+<p>
+  <strong>Monthly_charge:</strong>
+  <%= @user.monthly_charge %>
+</p>
+<p>
+  <strong>Image Id:</strong>
+  <%= @user.image_id.image_name %>
+</p>
+ 
+
+<%= link_to 'Back', new_user_path %>

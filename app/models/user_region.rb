@@ -1,0 +1,2 @@
+class UserRegion < ApplicationRecord
+end

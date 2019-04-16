@@ -1,0 +1,13 @@
+	<%= form_for @node do |form| %>
+<p>
+   <%=form.label "Node Name"%>  <br>
+   <%=form.text_field :node_name %>
+
+   <br>
+   <%=form.label :place_Id %> <br>
+    <%= form.select :place_id, Place.all.collect { |p| [ p.place_name, p.id ] }, include_blank: true %>
+</p>
+
+<%= form.submit %>
+<% end %>
+<%= link_to 'Back', welcome_index_path %>

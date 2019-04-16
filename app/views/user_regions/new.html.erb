@@ -1,0 +1,13 @@
+<%= form_with scope: :user_region, url: user_regions_path, local: true do |form| %>
+<p>
+   <%= form.label "user_id" %>  <br>
+  <%= form.select :User_id, User.all.collect { |u| [ u.email, u.id ] }, include_blank: true %>
+</p>
+         <br>
+   <%=form.label :region_id %> <br>
+     <%= form.select :Region_id, Region.all.collect { |r| [ r.region_name, r.id ] }, include_blank: true %>
+
+
+<%= form.submit %>
+<% end %>
+<%= link_to 'Back', welcome_index_path %>

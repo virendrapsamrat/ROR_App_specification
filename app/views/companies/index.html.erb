@@ -1,0 +1,26 @@
+<h1>Listing Companies</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Country_Id</th>
+    <th>State_Id</th>
+    <th>City_Id</th>
+    <th>Postcode</th>
+    <th>Start_date</th>
+  </tr>
+ 
+  <% @companies.each do |company| %>
+    <tr>
+      <td><%= company.name %></td>
+      <td><%= company.country_id %></td>
+      <td><%= company.state_id %></td>
+      <td><%= company.city_id %></td>
+      <td><%= company.postcode %></td>
+      <td><%= company.start_date %></td>
+
+      <td><%= link_to 'Show', company_path(company) %></td>
+    </tr>
+  <% end %>
+  <%= link_to 'New company', new_company_path %>
+</table>
