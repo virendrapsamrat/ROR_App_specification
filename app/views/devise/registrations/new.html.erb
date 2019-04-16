@@ -3,67 +3,62 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class= "field">
-        <label for="first_name">First Name</label><br>
-        <input class="shortInput" id="first_name" type="text"><br>
+ <p>
+    <%= f.label :First_Name %><br>
+    <%= f.text_field :first_name %>
+ </p>
+
+  <p>
+    <%= f.label :Last_Name %><br>
+    <%= f.text_field :last_name %>
+ </p>
+
+  <p>
+       <%= f.label :Country %><br>
+       <%= f.select :country_id, Country.all.collect { |p| [ p.country_name, p.id ] }, include_blank: true %>
+  </p>
+
+  <p>
+    <%= f.label :State %><br>
+    <%= f.select :state_id, State.all.collect { |p| [ p.state_city, p.id ] }, include_blank: true %>
+  </p>
+
+  <p>
+    <%= f.label :City %><br>
+    <%= f.select :city_id, City.all.collect { |p| [ p.city_name, p.id ] }, include_blank: true %>
+  </p>
+
+  <p>
+    <%= f.label :monthly_charge %><br>
+    <%= f.number_field :monthly_charge %>
+  </p>
+  
+  <p>
+    <%= f.label :Upload_Image %> <br>
+    <%= f.file_field :image %>
+  </p>
+ 
+  <div class="field">
+       <%= f.label :email %> <br>
+       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class= "field">
-        <label for="last_name">Last Name</label><br>
-        <input class="shortInput" id="last_name" type="text"><br>
-  </div><br>
-
-   <div class= "field">
-       <label for="country_id">Country Id</label><br>
-       <%= f.select :country_id, Country.all.collect { |p| [ p.country_name, p.id ] }, include_blank: true %>
-   </div>
-
-
-<div class= "field">
-       <label for="role_id">Role Id</label><br>
-       <select name="role_id" id="role_id">
-      <br>
-       <option value="1">Admin</option>
-       <option value="2">HR</option>
-       <option value="3">Tester</option>
-       <option value="4">Team Leader</option>
-    ...
-       <option value="5">Helper</option>
-       </select>
-   </div><br>
-
-   <div class="field">
-       <label for="first_name">Monthly Charge</label><br>
-       <input class="shortInput" id="monthly_charge" type="number"><br>
-   </div><br>
-   
-<div class="choose_file">
-        <span>Choose File</span>
-        <input name="Select File" type="file" />
-    </div
-
-
-   <div class="field">
-       <%= f.label :email %><br />
-       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-   </div>
-
-   <div class="field">
+  <div class="field">
        <%= f.label :password %>
        <% if @minimum_password_length %>
        <em>(<%= @minimum_password_length %> characters minimum)</em>
        <% end %><br />
        <%= f.password_field :password, autocomplete: "new-password" %>
-   </div>
+  </div>
 
-   <div class="field">
+  <div class="field">
        <%= f.label :password_confirmation %><br />
        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-   </div>
+  </div>
 
-   <div class="actions">
+  <div class="actions">
     <%= f.submit "Sign up" %>
-   </div>
+  </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
