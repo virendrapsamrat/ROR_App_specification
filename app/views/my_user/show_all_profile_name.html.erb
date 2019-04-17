@@ -1,0 +1,17 @@
+<h1>Listing User</h1>
+
+
+<table><% @user.each do |my_user| %>
+   <tr>
+    <th>first_Name</th>
+     <th>last_Name</th>
+
+   </tr>
+ 
+    <tr>
+      <td><%= my_user.first_name %></td>
+      <td><%= my_user.last_name %></td>
+     <td><%= link_to 'show profiles', show_particular_user_profile_path(my_user) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -19,7 +19,7 @@ class CitiesController < ApplicationController
 	     @city = City.all
 	end
 
-private
+  private
     def city_params
       params.require(:city).permit(:city_name)
     end

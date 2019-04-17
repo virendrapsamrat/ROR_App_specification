@@ -12,17 +12,17 @@ class UserRolesController < ApplicationController
 
 
     def show
-      @user_role = UserRole.find(params[:id])
+        @user_role = UserRole.find(params[:id])
     end
 
     def index
-    @user_role = UserRole.all
+        @user_role = UserRole.all
     end
 
 
   private
 	def user_role_params
-	params.require(:user_role).permit(:user_role_name)
+	    params.require(:user_role).permit(:user_role_name)
 	end
 
 end

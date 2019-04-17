@@ -7,6 +7,7 @@
   <strong>First_Name:</strong>
   <%= @user.first_name %>
 </p>
+
 <p>
   <strong>Last_Name:</strong>
   <%= @user.last_name %>
@@ -14,28 +15,20 @@
  
 <p>
   <strong>Country Name</strong>
-  <%= @user.country_id.country_name %>
+  <%= @user.country.country_name %>
 </p>
 
 <p>
   <strong>State Name:</strong>
-  <%= @user.state_id.state_city %>
+  <%= @user.state.state_city %>
 </p>
 
 <p>
   <strong>City Name:</strong>
-  <%= @user.city_id.city_name %>
+  <%= @user.city.city_name %>
 </p>
 
-<p>
-  <strong>Start_date:</strong>
-  <%= @user.start_date %>
-</p>
 
-<p>
-  <strong>End_date:</strong>
-  <%= @user.end_date %>
-</p>
 
 <p>
   <strong>Monthly_charge:</strong>
@@ -43,8 +36,8 @@
 </p>
 
 <p>
-  <strong>Image Id:</strong>
-  <%= @user.image.image %>
+  <strong>Image:</strong>
+  <%= image_tag(@user.image.url) %>
 </p>
  
 

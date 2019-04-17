@@ -12,17 +12,17 @@ class UserRegionsController < ApplicationController
 
 
     def show
-      @user_region = UserRegion.find(params[:id])
+        @user_region = UserRegion.find(params[:id])
     end
 
     def index
-    @user_region = UserRegion.all
+        @user_region = UserRegion.all
     end
 
 
   private
 	def user_region_params
-	params.require(:user_region).permit(:user_region_name)
+	    params.require(:user_region).permit(:user_region_name)
 	end
 
 end

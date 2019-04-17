@@ -1,0 +1,45 @@
+<%# byebug  %>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+ 
+<p>
+  <strong>First_Name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last_Name:</strong>
+  <%= @user.last_name %>
+</p>
+ 
+<p>
+  <strong>Country Name</strong>
+  <%= @user.country.country_name %>
+</p>
+
+<p>
+  <strong>State Name:</strong>
+  <%= @user.state.state_city %>
+</p>
+
+<p>
+  <strong>City Name:</strong>
+  <%= @user.city.city_name %>
+</p>
+
+
+
+<p>
+  <strong>Monthly_charge:</strong>
+  <%= @user.monthly_charge %>
+</p>
+
+<p>
+  <strong>Image Id:</strong>
+  <%= image_tag(@user.image.url) %>
+</p>
+ 
+
+<%= link_to 'Back', new_user_path %>

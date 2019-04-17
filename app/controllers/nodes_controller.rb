@@ -18,7 +18,7 @@ class NodesController < ApplicationController
 	end
 
   private
-	  def node_params
+	 def node_params
 	  	params.require(:node).permit(:node_name)
-	  end
+	 end
 end

@@ -1,13 +1,11 @@
 <%= form_for @city do |form| %>
 
 
-<%= form.label :city_name %>
-
-<%#= form.select :city_name, City.all.collect { |p| [ p.city_name, p.id ] }, include_blank: true %>
-<%= form.text_field :city_name %>
+	<%= form.label :city_name %>
+	<%= form.text_field :city_name %>
 
 
-<%= form.submit %>
+	<%= form.submit %>
 
 
 <% end %>

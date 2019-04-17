@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
 	
-	 def new
-	 	@user = User.all
+	 def veer
+	 	# @user = User.all
+	 	@user = current_user
 	 end
 
-	def show
+
+	def viru
 		@user = User.all
 	end
 

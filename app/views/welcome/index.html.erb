@@ -1,14 +1,16 @@
 
 <% if current_user.present? %>
-  <%#= image_tag(current_user.image.url, size: "100x100", alt: "Edit Entry")%>
+  <%= image_tag(current_user.image.url, size: "100x100", alt: "Edit Entry")%>
 
 <% end %>
 <h1>Welcome to Index</h1>
 
 
+  <h1 style="font-size:180%;"><%= link_to 'View all user profie name', show_all_profile_name_path %></h1>
  
- 
- <h1 style="font-size:180%;"><%= link_to 'View Profile', new_user_path %></h1>
+ <h1 style="font-size:180%;"><%= link_to 'View Profile', profile_path %></h1>
+ <h1 style="font-size:180%;"><%= link_to 'View Profile html path', '/my/profile' %></h1>
+
 <h1 style="font-size:180%;"><%= link_to 'New company', new_company_path %></h1>
 <h1 style="font-size:180%;"><%= link_to'User Role',new_user_role_path %> </h1>
 <h1 style="font-size:180%;"><%= link_to'User Region',new_user_region_path %></h1>
