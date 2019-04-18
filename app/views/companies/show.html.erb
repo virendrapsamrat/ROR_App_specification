@@ -7,6 +7,7 @@
   <strong>Country_Id:</strong>
   <%= @company.country.country_name %>
 </p>
+
 <p>
   <strong>State_Id:</strong>
   <%= @company.state.state_city %>
@@ -16,6 +17,7 @@
   <strong>City_Id:</strong>
   <%= @company.city.city_name %>
 </p>
+
 <p>
   <strong>Postcode:</strong>
   <%= @company.postcode %>
@@ -25,4 +27,12 @@
   <strong>Start_date:</strong>
   <%= @company.start_date %>
 </p>
+
+
+<h2>Comments</h2>
+<%= render @company.your_comments %>
+
+<h2> Add a comment:</h2>
+<%= render 'your_comments/form' %>
+<%= link_to 'Edit', edit_company_path%>
 <%= link_to 'Back', companies_path %>

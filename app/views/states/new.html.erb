@@ -2,9 +2,7 @@
 <%= form_for @state  do |form| %>
 <p>
 <%= form.label :State_Name %><br>
-
- <%#= form.select :state_city11, State.all.collect { |p| [ p.state_city, p.id ] }, include_blank: true %>
- <%= form.text_field :state_city%>
+<%= form.text_field :state_city%>
 </p>
 
 

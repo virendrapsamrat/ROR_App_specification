@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'users', to: 'welcome#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-    resources :companies
+    resources :companies do
+      resources :your_comments
+    end
     resources :cities
     resources :states
     resources :countries
@@ -16,10 +18,11 @@ Rails.application.routes.draw do
     resources :user_roles
     resources :users
     resources :signups
-    resources :my_users
+    resources :my_user
   root 'welcome#index'
   get 'my/profile', :to => 'users#veer', as: :profile
   get 'my/allprofile', :to => 'users#viru', as: :allprofile
   get 'my/show_all_profile_name', :to => 'my_user#show_all_profile_name', as: :show_all_profile_name
+  delete 'my/user_destroy/:my_user_id', :to => 'my_user#user_destroy', as: :user_destroy
   get 'my/show_particular_user_profile/:my_user_id', :to => 'my_user#show_particular_user_profile', as: :show_particular_user_profile
  end

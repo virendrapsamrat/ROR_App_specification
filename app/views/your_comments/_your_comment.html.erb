@@ -1,0 +1,16 @@
+
+<p>
+  <strong>Commenter:</strong>
+  <%= your_comment.commenter %>
+</p>
+ 
+<p>
+  <strong>Comment:</strong>
+  <%= your_comment.body %>
+</p>
+
+<p>
+  <%= link_to 'Delete Comment', [your_comment.company, your_comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

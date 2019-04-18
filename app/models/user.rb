@@ -9,6 +9,6 @@ class User < ApplicationRecord
    mount_uploader :image, NewImageUploader
    mount_uploader :image, AvatarUploader
     belongs_to :state
-	belongs_to :country
-	belongs_to :city
-end
+	  belongs_to :country
+	  belongs_to :city
+    end

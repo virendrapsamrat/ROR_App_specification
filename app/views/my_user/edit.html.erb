@@ -1,0 +1,64 @@
+
+<h1>Edit article</h1>
+<%= form_with(model: @user, local: true) do |form| %>
+ 
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this User from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <p>
+    <%= form.label :First_Name %><br>
+    <%= form.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= form.label :Last_Name %><br>
+    <%= form.text_field :last_name %>
+  </p>
+
+  <p>
+       <%= form.label :Country %><br>
+       <%= form.select :country_id, Country.all.collect { |p| [ p.country_name, p.id ] }, include_blank: true %>
+  </p>
+
+  <p>
+    <%= form.label :State %><br>
+    <%= form.select :state_id, State.all.collect { |p| [ p.state_city, p.id ] }, include_blank: true %>
+  </p>
+
+  <p>
+    <%= form.label :City %><br>
+    <%= form.select :city_id, City.all.collect { |p| [ p.city_name, p.id ] }, include_blank: true %>
+  </p>
+
+  <p>
+    <%= form.label :monthly_charge %><br>
+    <%= form.number_field :monthly_charge %>
+  </p>
+  
+  <p>
+    <%= form.label :Upload_Image %> <br>
+    <%= form.file_field :image %>
+  </p>
+ 
+  <p>
+       <%= form.label :email %> <br>
+       <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
+  </p>
+
+   <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>

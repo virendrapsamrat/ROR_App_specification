@@ -12,6 +12,13 @@
       <td><%= my_user.first_name %></td>
       <td><%= my_user.last_name %></td>
      <td><%= link_to 'show profiles', show_particular_user_profile_path(my_user) %></td>
+     <td><%= link_to 'Edit', edit_my_user_path(my_user) %></td>
+     <td><%= link_to 'destroy', user_destroy_path(my_user),
+                       method: :delete, data: {confirm: 'sure?'} %></td>
+     <td>
+      <%= link_to 'delete', my_user_path(my_user),
+                       method: :delete, data: {confirm: 'sure?'} %></td>
     </tr>
   <% end %>
 </table>
+<%= link_to 'Back', welcome_index_path %>
