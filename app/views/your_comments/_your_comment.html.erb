@@ -1,5 +1,5 @@
-
-<p>
+<% @company.your_comments.each do |your_comment| %>
+<p> 	
   <strong>Commenter:</strong>
   <%= your_comment.commenter %>
 </p>
@@ -9,8 +9,17 @@
   <%= your_comment.body %>
 </p>
 
+	<%= link_to 'Like', hilike_company_your_comment_likes_path(@company, your_comment)%>
+	<p><%= your_comment.likes.count %> 
+	<%= (your_comment.likes.count) == 1 ? 'Like' : 'likes'%></p>
+    <%= link_to 'Unlike', byelike_company_your_comment_likes_path(@company,your_comment) %>
+
+
+
 <p>
   <%= link_to 'Delete Comment', [your_comment.company, your_comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
 </p>
+
+<% end %>

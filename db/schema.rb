@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_18_113256) do
+ActiveRecord::Schema.define(version: 2019_04_19_102855) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2019_04_18_113256) do
     t.string "image_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "your_comment_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_likes_on_user_id"
+    t.index ["your_comment_id"], name: "index_likes_on_your_comment_id"
   end
 
   create_table "nodes", force: :cascade do |t|
@@ -96,18 +105,9 @@ ActiveRecord::Schema.define(version: 2019_04_18_113256) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-  
-  create_table "users", force: :cascade do |t|
-      t.string "email", default: "", null: false
-      t.string "encrypted_password", default: "", null: false
-      t.string "reset_password_token"
-      t.datetime "reset_password_sent_at"
-      t.datetime "remember_created_at"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-      t.index ["email"], name: "index_users_on_email", unique: true
-      t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    end
+
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'file' for column 'image_id'
 
   create_table "your_comments", force: :cascade do |t|
     t.string "commenter"

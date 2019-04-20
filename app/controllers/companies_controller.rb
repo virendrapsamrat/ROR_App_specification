@@ -19,6 +19,19 @@ class CompaniesController < ApplicationController
         redirect_to @company
 	end
 
+
+
+ def hilike
+     @comment1 = Like.create_like(@model, current_user)
+   end
+ 
+   def byelike
+      Like.create_dislike(@model, current_user)
+    end
+    
+
+
+
   private
     def company_params
       params.require(:company).permit(:name, :country_id, :state_id, :city_id, :postcode, :start_date)
