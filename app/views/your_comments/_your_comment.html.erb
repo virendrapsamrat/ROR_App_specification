@@ -8,11 +8,14 @@
   <strong>Comment:</strong>
   <%= your_comment.body %>
 </p>
+ 
+<%# byebug%>
 
-	<%= link_to 'Like', hilike_company_your_comment_likes_path(@company, your_comment)%>
-	<p><%= your_comment.likes.count %> 
-	<%= (your_comment.likes.count) == 1 ? 'Like' : 'likes'%></p>
-    <%= link_to 'Unlike', byelike_company_your_comment_likes_path(@company,your_comment) %>
+   <%# if Like.where()%>
+
+<div id="my-comment-like-dislike-<%= your_comment.id %>">
+	<%= render 'your_comments/like_dislike', your_comment: your_comment, company: @company %>
+</div>
 
 
 
@@ -23,3 +26,5 @@
 </p>
 
 <% end %>
+
+

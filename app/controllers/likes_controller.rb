@@ -8,7 +8,7 @@ class LikesController < ApplicationController
          else
 		    @your_comment.likes.create(user_id: current_user.id)
          end
-		redirect_to company_path(@company1)
+		# redirect_to company_path(@company1)
 	end
 
 
@@ -18,7 +18,7 @@ class LikesController < ApplicationController
           else
             @your_comment.likes.where(user_id: current_user).destroy_all
           end
-           redirect_to company_path(@company1)
+          # redirect_to company_path(@company1)
     end
 
 
