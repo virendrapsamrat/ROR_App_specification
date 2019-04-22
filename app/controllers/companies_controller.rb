@@ -13,23 +13,26 @@ class CompaniesController < ApplicationController
 	def new
 	end
 
+
+	def edit
+        @company = Company.find(params[:id])
+    end
+
 	def create
 		@company = Company.new(company_params) 
         @company.save
         redirect_to @company
 	end
 
-
-
- def hilike
-     @comment1 = Like.create_like(@model, current_user)
-   end
- 
-   def byelike
-      Like.create_dislike(@model, current_user)
+  def update
+    @company = Company.find(params[:id])
+   
+    if @company.update(company_params)
+      redirect_to @company
+    else
+      render 'edit'
     end
-    
-
+  end
 
 
   private
