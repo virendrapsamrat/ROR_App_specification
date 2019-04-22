@@ -20,7 +20,6 @@ class MyUserController < ApplicationController
     end
 
     def destroy
-    	byebug
     	@user = User.find(params[:id])
     	@user.destroy
  

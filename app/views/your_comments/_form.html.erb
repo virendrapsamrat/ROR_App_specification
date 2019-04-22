@@ -1,5 +1,5 @@
 
-<%= form_with(model: [ @company, @company.your_comments.build ], local: true) do |form| %>
+<%= form_with(model: [ @company, @company.your_comments.build ], remote: true, id: "create-comment-form") do |form| %>
   <p>
     <%= form.label :commenter %><br>
     <%= form.text_field :commenter %>

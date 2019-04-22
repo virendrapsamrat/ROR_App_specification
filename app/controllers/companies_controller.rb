@@ -28,7 +28,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
    
     if @company.update(company_params)
-      redirect_to @company
+      redirect_to @company_params
     else
       render 'edit'
     end

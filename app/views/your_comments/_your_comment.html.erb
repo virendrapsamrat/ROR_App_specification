@@ -1,29 +1,5 @@
 <% @company.your_comments.each do |your_comment| %>
-<p> 	
-  <strong>Commenter:</strong>
-  <%= your_comment.commenter %>
-</p>
- 
-<p>
-  <strong>Comment:</strong>
-  <%= your_comment.body %>
-</p>
- 
-<%# byebug%>
-
-   <%# if Like.where()%>
-
-<div id="my-comment-like-dislike-<%= your_comment.id %>">
-	<%= render 'your_comments/like_dislike', your_comment: your_comment, company: @company %>
-</div>
-
-
-
-<p>
-  <%= link_to 'Delete Comment', [your_comment.company, your_comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+<%= render 'your_comments/comment', comment: your_comment %>
 
 <% end %>
 

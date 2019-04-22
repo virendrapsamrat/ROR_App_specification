@@ -1,0 +1,22 @@
+<div id="comment-<%= comment.id %>">
+	<p>
+	  <strong>Commenter:</strong>
+	  <%= comment.commenter %>
+	</p>
+	 
+	<p>
+	  <strong>Comment:</strong>
+	  <%= comment.body %>
+	</p>
+
+	<div id="any-name-<%= comment.id %>">
+		<%= render 'your_comments/like_dislike', comment: comment, company: @company %>
+	</div>
+
+
+
+	<div id="type-any-name">
+	  <%= link_to 'Delete Comment', [comment.company, comment], method: :delete, data: { confirm: 'Are you sure?', remote: true } %>
+	</div>
+	<hr>
+</div>
