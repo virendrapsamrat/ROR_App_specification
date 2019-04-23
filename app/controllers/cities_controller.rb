@@ -2,6 +2,7 @@ class CitiesController < ApplicationController
 
 	def new
 		@city = City.new
+
 	end
 
 	def create
@@ -16,7 +17,7 @@ class CitiesController < ApplicationController
 
 
 	def index
-	     @city = City.all
+	     @cities = City.all
 	end
 
   private

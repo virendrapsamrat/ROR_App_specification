@@ -1,0 +1,16 @@
+<%= form_with(model: [@city, @city.citycomments.build ]) do |form| %>
+
+   <p>
+       <%= form.hidden_field :user_id, value: current_user.id %>
+   </p>
+
+   <p>
+      <%= form.label :body %><br>
+      <%= form.text_area :body, required: true %>
+   </p>
+
+   <p>
+      <%= form.submit 'submit' %>
+   </p>
+
+<% end %>

@@ -1,7 +1,7 @@
 class UserRolesController < ApplicationController
 	
 	def new
-		@user_role = UserRole.all
+		
 	end
 	
 	def create
@@ -11,7 +11,7 @@ class UserRolesController < ApplicationController
 	end
 
 
-    def show
+    def alluser	
         @user_role = UserRole.find(params[:id])
     end
 

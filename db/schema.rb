@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_19_102855) do
+ActiveRecord::Schema.define(version: 2019_04_23_123127) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "citycomments", force: :cascade do |t|
+    t.integer "city_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "body"
+    t.index ["city_id"], name: "index_citycomments_on_city_id"
+    t.index ["user_id"], name: "index_citycomments_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|

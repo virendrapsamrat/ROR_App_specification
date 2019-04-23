@@ -1,4 +1,5 @@
-	<%= form_for @node do |form| %>
+<%= form_with scope: :node, url: nodes_path, local: true do |form| %>
+
 <p>
    <%=form.label "Node Name"%>  <br>
    <%=form.text_field :node_name %>

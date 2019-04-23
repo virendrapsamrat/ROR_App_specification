@@ -22,7 +22,7 @@ class CompaniesController < ApplicationController
 		@company = Company.new(company_params) 
         @company.save
         redirect_to @company
-	end
+	end  
 
   def update
     @company = Company.find(params[:id])

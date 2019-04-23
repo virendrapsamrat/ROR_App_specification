@@ -1,0 +1,20 @@
+<% if comment.present? %>
+ 
+    <div id="comment-<%= comment.id %>">
+       <p>
+	      <strong>Commenter:</strong>
+	      <%= comment.user.try(:first_name) %>
+	   </p>
+	 
+	   <p>
+	       <strong>Comment:</strong>
+	       <%= comment.body %>
+	   </p>
+     	
+    <div>
+		<%= render 'citycomments/like_dislike', comment: comment, city: @city %>
+	</div>
+
+    </div>
+     <hr>
+<% end -%>

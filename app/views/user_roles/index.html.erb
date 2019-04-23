@@ -1,0 +1,12 @@
+<h> hi this is user role page </h>
+<table>	
+<tr>
+    <th>user_role</th>
+    </tr>
+
+    <% @user_roles.each do |u| %>
+    <tr>
+    <td><%= u.role_name %></td>
+    </tr>
+    <% end %>
+    </table>

@@ -5,7 +5,6 @@ class CountriesController < ApplicationController
 	end
 
     def create
-        
         @country = Country.new(country_params)
     	@country.save
     	redirect_to @country

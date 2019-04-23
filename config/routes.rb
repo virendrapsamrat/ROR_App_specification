@@ -14,7 +14,16 @@ Rails.application.routes.draw do
         end
       end
     end
-    resources :cities
+    resources :cities do
+      resources :citycomments do
+       resources :likes do
+        collection do
+          get 'hilike'
+          get 'byelike'
+        end
+      end
+    end
+  end
     resources :states
     resources :countries
     resources :places
@@ -26,6 +35,7 @@ Rails.application.routes.draw do
     resources :users
     resources :signups
     resources :my_user
+  #get 'user_roles/alluser', 'user_roles#alluser'
   root 'welcome#index'
   get 'my/profile', :to => 'users#veer', as: :profile
   get 'my/allprofile', :to => 'users#viru', as: :allprofile
