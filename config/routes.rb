@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
     resources :cities do
       resources :citycomments do
-       resources :likes do
+       resources :citylikes do
         collection do
           get 'hilike'
           get 'byelike'

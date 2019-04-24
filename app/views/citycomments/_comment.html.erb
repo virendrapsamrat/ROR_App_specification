@@ -11,9 +11,14 @@
 	       <%= comment.body %>
 	   </p>
      	
-    <div>
+ <div>
 		<%= render 'citycomments/like_dislike', comment: comment, city: @city %>
 	</div>
+
+<div>
+	  <%= link_to 'Delete Comment', [comment.city, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+	</div>
+
 
     </div>
      <hr>

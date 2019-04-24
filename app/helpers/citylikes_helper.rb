@@ -1,0 +1,2 @@
+module CitylikesHelper
+end

@@ -7,8 +7,8 @@ class CitycommentsController < ApplicationController
 	  end
 
 	  def destroy
-	    @city = Company.find(params[:city_id])
-	    @citycomment = @city.citycomment.find(params[:id])
+	    @city = City.find(params[:city_id])
+	    @citycomment = @city.citycomments.find(params[:id])
 	    @citycomment.destroy
 	    redirect_to city_path(@city)
 	  end
@@ -17,6 +17,5 @@ class CitycommentsController < ApplicationController
 	    def citycomment_params
 	      params.require(:citycomment).permit(:user_id, :body)
 	    end
-
-
 end
+

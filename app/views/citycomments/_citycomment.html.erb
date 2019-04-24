@@ -1,3 +1,5 @@
 <% @city.citycomments.each do |citycomment| %>
-	<%= render 'citycomments/comment', comment: citycomment %>
+    <% if !(citycomment.id == nil) %>
+	       <%= render 'citycomments/comment', comment: citycomment %>
+     <% end %>
 <% end %>

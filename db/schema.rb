@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_23_123127) do
+ActiveRecord::Schema.define(version: 2019_04_24_112923) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
@@ -28,11 +28,22 @@ ActiveRecord::Schema.define(version: 2019_04_23_123127) do
     t.index ["user_id"], name: "index_citycomments_on_user_id"
   end
 
+  create_table "citylikes", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "citycomment"
+    t.integer "citycomment_id"
+    t.index ["user_id"], name: "index_citylikes_on_user_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -116,8 +127,25 @@ ActiveRecord::Schema.define(version: 2019_04_23_123127) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "users" because of following StandardError
-#   Unknown type 'file' for column 'image_id'
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "state_id"
+    t.integer "city_id"
+    t.integer "country_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "monthly_charge"
+    t.string "image"
+    t.string "newimage"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
 
   create_table "your_comments", force: :cascade do |t|
     t.string "commenter"
