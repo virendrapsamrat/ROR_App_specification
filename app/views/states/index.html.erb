@@ -1,0 +1,18 @@
+<p>Find me in app/views/state/index.html.erb</p>
+<h> hi this is all state  page </h>
+<table>	
+<tr>
+    <th>state_name</th>
+    </tr>
+
+    <% @state.each do |s| %>
+    <tr>
+    <td><%= s.state_city %></td>
+
+    <td><%= link_to 'show', state_path(s) %>
+    </tr>
+    <% end %>
+    </table>
+ <div >
+</div>
+

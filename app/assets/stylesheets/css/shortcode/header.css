@@ -774,7 +774,8 @@ nav.off__canvars--menu ul li ul li a:hover {
     margin-bottom: 19px;
     margin-top: 7px;
 }
-h4.offset__title {
+h4.offset__title 
+{
     color: #444444;
     font-size: 18px;
     font-weight: 500;

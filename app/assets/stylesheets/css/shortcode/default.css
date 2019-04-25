@@ -694,7 +694,7 @@ p.error {
   22. Moz Placeholder
 ------------------------------------------*/
 
-*::-moz-selection {
+/**::-moz-selection {
     background: #c43b68;
     color: #fff;
     text-shadow: none;
@@ -716,10 +716,10 @@ input [type="text"]:focus::-moz-placeholder,
 input [type="email"]:focus, 
 input [type="email"]:focus::-moz-placeholder{
   color: #333333;
-}
+}*/
 
 
-input::-webkit-input-placeholder { / Chrome/Opera/Safari /
+/*input::-webkit-input-placeholder { / Chrome/Opera/Safari /
   color: #444;
   opacity: 1;
 }
@@ -744,7 +744,7 @@ textarea:-ms-input-placeholder { / IE 10+ /
   color: #444;
   opacity: 1;
 }
-
+*/
 
 
 
