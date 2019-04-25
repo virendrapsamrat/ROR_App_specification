@@ -8,7 +8,7 @@ class CitylikesController < ApplicationController
          else
 		    @citycomment.citylikes.create(user_id: current_user.id)
          end
-		 redirect_to city_path(@city1)
+		# redirect_to city_path(@city1)
 	end
 
 
@@ -18,7 +18,7 @@ class CitylikesController < ApplicationController
           else
             @citycomment.citylikes.where(user_id: current_user).destroy_all
           end
-          redirect_to city_path(@city1)
+        #  redirect_to city_path(@city1)
     end
 
 

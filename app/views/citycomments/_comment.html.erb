@@ -11,7 +11,7 @@
 	       <%= comment.body %>
 	   </p>
      	
- <div>
+ <div id="viru-<%= comment.id %>">
 		<%= render 'citycomments/like_dislike', comment: comment, city: @city %>
 	</div>
 
