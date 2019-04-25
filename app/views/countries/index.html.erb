@@ -1,0 +1,15 @@
+<h1>Listing Countries</h1>
+ 
+<table>
+	  <tr>
+	      <th>country_name</th>
+	  </tr>
+
+  <% @country.each do |poojak| %>
+	 <tr>
+	  <td><%= poojak.country_name %></td>
+	   <td><%= link_to 'Show', country_path(poojak) %></td>
+	  </tr>
+  <% end %>
+
+  </table>

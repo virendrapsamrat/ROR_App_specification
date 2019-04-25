@@ -1,5 +1,5 @@
-<%= form_with scope: :user_role, url: user_roles_path, local: true do |form| %>
-<p>
+
+<%= form_for @user_role  do |form| %><p>
    <%= form.label "role_name" %>  <br>
    <%= form.text_field :role_name %>
 </p>
@@ -8,4 +8,4 @@
 <br>
 <br>
 <%= link_to 'Back', welcome_index_path %>
-<%#= link_to 'show all', user_roles_alluser_path %>
+<%= link_to 'show all', user_roles_path %>

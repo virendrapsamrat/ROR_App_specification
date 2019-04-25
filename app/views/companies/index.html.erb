@@ -20,6 +20,9 @@
       <td><%= company.start_date %></td>
 
       <td><%= link_to 'Show', company_path(company) %></td>
+      <td><%= link_to ' Edit ', "/companies/#{company.id}/edit" %></td>
+
+      
     </tr>
   <% end %>
   <%= link_to 'New company', new_company_path %>

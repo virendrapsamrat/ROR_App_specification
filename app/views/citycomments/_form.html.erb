@@ -1,4 +1,4 @@
-<%= form_with(model: [@city, @city.citycomments.build ]) do |form| %>
+<%= form_with(model: [@city, @city.citycomments.build ] , remote: true, id:"do-nothing") do |form| %>
 
    <p>
        <%= form.hidden_field :user_id, value: current_user.id %>

@@ -16,7 +16,7 @@
 	</div>
 
 <div>
-	  <%= link_to 'Delete Comment', [comment.city, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+	  <%= link_to 'Delete Comment', [comment.city, comment], method: :delete, data: { confirm: 'Are you sure?' , remote: true} %>
 	</div>
 
 

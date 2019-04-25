@@ -4,9 +4,10 @@
     <th>user_role</th>
     </tr>
 
-    <% @user_roles.each do |u| %>
+    <% @user_role.each do |u| %>
     <tr>
     <td><%= u.role_name %></td>
+  <td>  <%= link_to 'show', user_role_path(u) %></td>
     </tr>
     <% end %>
     </table>
