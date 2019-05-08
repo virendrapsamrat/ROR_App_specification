@@ -19,8 +19,13 @@
       <td><%= company.postcode %></td>
       <td><%= company.start_date %></td>
 
-      <td><%= link_to 'Show', company_path(company) %></td>
-      <td><%= link_to ' Edit ', "/companies/#{company.id}/edit" %></td>
+      <td>      
+      <%= link_to 'Show', company_path(company) %></td>
+      <td>
+      <% if (company.user_id == current_user.id) %>
+      <%= link_to ' Edit ', "/companies/#{company.id}/edit" %>
+        <% end %>
+      </td>
 
       
     </tr>

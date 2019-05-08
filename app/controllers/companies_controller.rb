@@ -20,6 +20,7 @@ class CompaniesController < ApplicationController
 
 	def create
 		@company = Company.new(company_params) 
+     @company.user_id = current_user.id
         @company.save
         redirect_to @company
 	end  

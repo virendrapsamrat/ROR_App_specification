@@ -1,7 +1,8 @@
 class MyUserController < ApplicationController
 	
 	def show_all_profile_name
-         @user = User.all
+   # @User = User.where(user id: current_user_id)
+     @user = User.all
 	end
 
 	def show_particular_user_profile

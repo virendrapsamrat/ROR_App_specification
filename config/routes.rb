@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     resources :signups
     resources :my_user
   #get 'user_roles/alluser', 'user_roles#alluser'
-  root 'welcome#index'
+  root 'welcome#index2'
   get 'my/profile', :to => 'users#veer', as: :profile
   get 'my/allprofile', :to => 'users#viru', as: :allprofile
   get 'my/show_all_profile_name', :to => 'my_user#show_all_profile_name', as: :show_all_profile_name

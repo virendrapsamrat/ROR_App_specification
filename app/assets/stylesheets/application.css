@@ -13,6 +13,5 @@
  *= require css/custom
  *= require  css/responsive
  *= require_self
-
  *= require_tree .
  */

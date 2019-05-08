@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_24_112923) do
+ActiveRecord::Schema.define(version: 2019_05_01_143704) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_04_24_112923) do
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -143,6 +144,7 @@ ActiveRecord::Schema.define(version: 2019_04_24_112923) do
     t.integer "monthly_charge"
     t.string "image"
     t.string "newimage"
+    t.integer "user_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

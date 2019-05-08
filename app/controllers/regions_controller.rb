@@ -1,4 +1,4 @@
-    class RegionsController < ApplicationController
+class RegionsController < ApplicationController
 
 	def new
 		@region = Region.new

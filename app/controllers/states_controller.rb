@@ -5,7 +5,7 @@ class StatesController < ApplicationController
 	end
 
     def create
-        @state =State.new(state_params)
+      @state =State.new(state_params)
     	@state.save
     	redirect_to @state
     end
